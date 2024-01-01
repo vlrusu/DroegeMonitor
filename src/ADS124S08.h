@@ -1,6 +1,7 @@
 // ADS124S08 struct definition
 #include "pico/stdlib.h"
 #include "hardware/spi.h"
+#include <math.h>
 
 /* Define to prevent recursive inclusion -------------------------------------*/
 #ifndef ADS124S08_H
@@ -40,6 +41,7 @@
 #define ADS124S08_REG_GPIODAT  0x10
 #define ADS124S08_REG_GPIOCON  0x11
 
+#define ADS124S08_REFV 2.5
 
 
 
@@ -54,7 +56,7 @@ typedef struct {
 void ads124s08_init(ADS124S08* adc,  uint cs_pin);
 void ads124s08_write_register(ADS124S08* adc,uint8_t reg, uint8_t value);
 uint8_t ads124s08_read_register(ADS124S08* adc,uint8_t reg);
-int32_t ads124s08_read_data(ADS124S08* adc);
+float ads124s08_read_data(ADS124S08* adc);
 
 uint8_t ads124s08_readDeviceID(ADS124S08* adc);
 

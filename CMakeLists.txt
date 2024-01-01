@@ -21,7 +21,7 @@ target_link_libraries(${PROJECT_NAME} pico_stdlib hardware_adc hardware_pio hard
 
 pico_add_extra_outputs(${PROJECT_NAME})
 
-pico_enable_stdio_uart(${projectname} 0)
+pico_enable_stdio_uart(${projectname} 1)
 pico_enable_stdio_usb(${projectname} 1)
 
 
