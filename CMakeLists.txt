@@ -14,6 +14,7 @@ pico_sdk_init()
 
 add_executable(${PROJECT_NAME}
     src/main.c
+    src/ADS124S08.c
 )
 
 target_link_libraries(${PROJECT_NAME} pico_stdlib hardware_adc hardware_pio hardware_spi)
